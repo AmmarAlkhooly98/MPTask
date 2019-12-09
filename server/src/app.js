@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
+const config = require('./config/config');
+const { sequelize } = require('./models');
+const db = require('./models/index');
 
 const app = express();
 
@@ -12,7 +15,7 @@ app.use(cors());
 
 require('./routes')(app);
 
-const port = 8080;
-
-app.listen(port);
-console.log(`listening on port ${port}`);
+sequelize.sync({ force: false }).then(() => {
+	app.listen(config.port);
+	console.log(`listening on port ${config.port}`);
+});
