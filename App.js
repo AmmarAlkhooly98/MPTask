@@ -2,14 +2,19 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './components/homeScreen';
 import BottomNavBar from './components/bottomNavigationTab';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import store from './store';
 
 export default function App() {
 	return (
-		<View>
+		<Provider store={store}>
 			<View>
-				<BottomNavBar />
+				<View>
+					<BottomNavBar />
+				</View>
 			</View>
-		</View>
+		</Provider>
 	);
 }
 

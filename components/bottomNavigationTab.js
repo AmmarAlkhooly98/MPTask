@@ -7,8 +7,9 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View, Image, TouchableOpacity, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+class BottomNavBar extends React.Component {
 	render() {
 		return (
 			<View style={styles.container}>
@@ -85,3 +86,9 @@ const styles = StyleSheet.create({
 		paddingTop: 4
 	}
 });
+
+const mapStateToProps = (state) => {
+	return {};
+};
+
+export default connect(mapStateToProps)(BottomNavBar);
