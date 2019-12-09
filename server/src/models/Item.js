@@ -5,22 +5,29 @@ module.exports = (sequelize, DataType) => {
 			primaryKey: true,
 			autoIncrement: true
 		},
-		Item_Name: {
+		Name: {
 			type: DataType.STRING,
 			allowNull: false,
 			validate: {
 				notEmpty: true
 			}
 		},
-		Item_Price: {
+		Price: {
 			type: DataType.INTEGER,
 			allowNull: false,
 			validate: {
 				notEmpty: true
 			}
 		},
-		Item_Description: {
+		Description: {
 			type: DataType.INTEGER,
+			allowNull: false,
+			validate: {
+				notEmpty: true
+			}
+		},
+		Image: {
+			type: DataType.STRING,
 			allowNull: false,
 			validate: {
 				notEmpty: true
